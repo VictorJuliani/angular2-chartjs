@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-
 import { BrowserModule } from '@angular/platform-browser';
 import { ChartModule } from '../src';
 import { AppComponent } from './app.component';
@@ -9,6 +8,4 @@ import { AppComponent } from './app.component';
   declarations: [ AppComponent ],
   bootstrap: [ AppComponent ]
 })
-export class AppModule {
-  constructor() { }
-}
+export class AppModule {}

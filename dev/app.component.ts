@@ -41,9 +41,6 @@ export class AppComponent {
     }
   };
 
-  constructor() {
-  }
-
   change() {
     this.type = 'bar';
     this.data = {

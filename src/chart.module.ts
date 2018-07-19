@@ -1,13 +1,9 @@
-if (typeof window === 'object') {
-  require('chart.js');
-}
 import { NgModule } from '@angular/core';
 import { ChartComponent } from './chart.component';
+import 'chart.js';
 
 @NgModule({
   declarations: [ ChartComponent ],
   exports: [ ChartComponent ]
 })
-export class ChartModule {
-  constructor() { }
-}
+export class ChartModule {}
