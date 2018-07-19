@@ -1,5 +1,5 @@
 {
-  "name": "ngx-chartjs",
+  "name": "@vonbraunlabs/ngx-chart.js",
   "version": "1.0.0",
   "description": "Chart.js component for Angular",
   "main": "dist/index.js",
@@ -40,15 +40,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/VictorJuliani/ngx-chartjs"
+    "url": "https://github.com/VictorJuliani/ngx-chart.js"
   },
   "keywords": [
     "chart",
     "angular",
     "ngx"
   ],
-  "homepage": "https://github.com/VictorJuliani/ngx-chartjs",
+  "homepage": "https://github.com/VictorJuliani/ngx-chart.js",
   "bugs": {
-    "url": "https://github.com/VictorJuliani/ngx-chartjs/issues"
+    "url": "https://github.com/VictorJuliani/ngx-chart.js/issues"
   }
 }
