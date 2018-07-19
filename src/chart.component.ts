@@ -7,28 +7,30 @@ declare var Chart;
   template: '',
   styles: [':host { display: block; }']
 })
-export class ChartComponent implements OnInit, OnChanges {
-  chart: any;
-
+export class ChartComponent implements OnInit, OnChanges
+{
   @Input() type: string;
   @Input() data: any;
   @Input() options: any;
+  @Input() plugins: any;
   @Output() clickCanvas = new EventEmitter();
   @Output() clickDataset = new EventEmitter();
   @Output() clickElements = new EventEmitter();
   @Output() clickElement = new EventEmitter();
 
+  chart: any;
   private canvas;
 
-  constructor(private elementRef: ElementRef, private ngZone: NgZone) { }
+  constructor(private elementRef: ElementRef, private ngZone: NgZone) {}
 
   ngOnInit() {
     this.create();
   }
 
-  ngOnChanges(changes: SimpleChanges) {
+  ngOnChanges(changes: SimpleChanges)
+  {
     if (this.chart) {
-      if (changes['type'] || changes['options']) {
+      if (changes['type'] || changes['options'] || changes['plugins']) {
         this.create();
       } else if (changes['data']) {
         let currentValue = changes['data'].currentValue;
@@ -40,18 +42,22 @@ export class ChartComponent implements OnInit, OnChanges {
     }
   }
 
-  private create() {
+  private create()
+  {
     this.ngZone.runOutsideAngular(() => {
       if (this.canvas) {
         this.elementRef.nativeElement.removeChild(this.canvas);
       }
+
       this.canvas = document.createElement('canvas');
       this.elementRef.nativeElement.appendChild(this.canvas);
       this.chart = new Chart(this.canvas, {
         type: this.type,
         data: this.data,
-        options: this.options
+        options: this.options,
+        plugins: this.plugins
       });
+
       this.canvas.onclick = e => {
         this.ngZone.run(() => {
           this.clickCanvas.next(e);
